@@ -1,0 +1,23 @@
+syntax = "proto3";
+package pt.ulisboa.tecnico.distledger.contract;
+
+// Common definitions of the DistLedger Service contract
+
+enum OperationType {
+  OP_UNSPECIFIED = 0;
+  OP_TRANSFER_TO = 1;
+  OP_CREATE_ACCOUNT = 2;
+  OP_DELETE_ACCOUNT = 3;
+}
+
+message Operation {
+  OperationType type = 1;
+  string userId = 2;
+  string destUserId = 3;  //only for transferTo operations
+  int32 amount = 4;  //only for transferTo operations
+}
+
+message LedgerState {
+  repeated Operation ledger = 1;
+}
+

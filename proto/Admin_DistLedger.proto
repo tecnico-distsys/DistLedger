@@ -1,0 +1,31 @@
+syntax = "proto3";
+package pt.ulisboa.tecnico.distledger.contract.admin;
+
+import "DistLedgerCommonDefinitions.proto";
+
+// Administrator Interface of the DistLedger Service
+
+message ActivateRequest {}
+
+message ActivateResponse {}
+
+message DeactivateRequest {}
+
+message DeactivateResponse {}
+
+message GossipRequest {}
+
+message GossipResponse {}
+
+message getLedgerStateRequest {}
+
+message getLedgerStateResponse {
+  LedgerState ledgerState = 1;
+}
+
+service AdminService {
+  rpc activate(ActivateRequest) returns (ActivateResponse);
+  rpc deactivate(DeactivateRequest) returns (DeactivateResponse);
+  rpc gossip(GossipRequest) returns (GossipResponse);
+  rpc getLedgerState(getLedgerStateRequest) returns (getLedgerStateResponse);
+}
