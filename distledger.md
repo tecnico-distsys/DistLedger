@@ -262,7 +262,7 @@ OK
 OK
 50
 
-> closeAccount A Alice
+> deleteAccount A Alice
 OK
 
 > exit
@@ -356,7 +356,7 @@ uma versão mais simples da validação.
 
 # 8 Modelo de Faltas
 
-Deve assumir-se um sistema síncrono, em que as falhas são silenciosas. Não ocorrem falhas bizantinas. 
+Deve assumir-se um sistema síncrono _(em particular, assume-se que as mensagens enviadas irão eventualmente ser entregues, dentro de um intervalo de tempo limitado)_, em que as falhas são silenciosas. Não ocorrem falhas bizantinas. 
 
 Se durante a execução surgirem faltas, ou seja, acontecimentos inesperados, o programa deve apanhar a exceção, imprimir
 informação sucinta e pode parar de executar.
