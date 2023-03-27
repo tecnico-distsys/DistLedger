@@ -15,6 +15,8 @@ message Operation {
   string userId = 2;
   string destUserId = 3;  //only for transferTo operations
   int32 amount = 4;  //only for transferTo operations
+  repeated int32 prevTS = 5;
+  repeated int32 TS = 6;
 }
 
 message LedgerState {

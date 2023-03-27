@@ -7,9 +7,11 @@ import "DistLedgerCommonDefinitions.proto";
 
 message PropagateStateRequest {
   LedgerState state = 1;
+  repeated int32 replicaTS = 2;
 }
 
-message PropagateStateResponse {}
+message PropagateStateResponse {
+}
 
 service DistLedgerCrossServerService {
   rpc propagateState(PropagateStateRequest) returns (PropagateStateResponse);
