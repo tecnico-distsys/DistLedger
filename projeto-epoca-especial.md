@@ -20,7 +20,7 @@ Haverá uma discussão final, a realizar em dia ser agendado posteriormente.
 0 Ponto de partida
 ------------
 
-O projeto consistirá numa extensão à solução da primeira parte do projeto da época normal de SD, cujo enunciado pode ser obtido [aqui](https://github.com/tecnico-distsys/DistLedger).
+O projeto consistirá numa extensão à solução da primeira parte do projeto da época normal de SD, cujo enunciado pode ser obtido [aqui](https://github.com/tecnico-distsys/DistLedger/blob/master/distledger.md).
 O resto do enunciado de época especial pressupõe que o estudante leu o enunciado mencionado acima.
 
 Para obter a solução base, o estudante deve enviar email aos docentes de SD e estes enviarão o código de uma solução.
