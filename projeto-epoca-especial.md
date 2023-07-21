@@ -30,7 +30,7 @@ Para obter a solução base, o estudante deve enviar email aos docentes de SD e 
 ------------------------
 
 Projeto deve ser estendido com uma operação adicional, `shareWithOthers`.
-Esta operação recebe quarto argumentos: 
+Esta operação recebe quatro argumentos: 
 
 - O qualificador do servidor que deve ser contactado ('A', 'B', etc.). Este argumento deve ser ignorado e só será usado no requisito R2.
 
@@ -65,7 +65,7 @@ Ou seja:
 *gossip*, descrita no enunciado de época normal).
 
 
-3 Requisito R3: Assinatura digitais de mensagens (6 valores)
+3 Requisito R3: Assinatura digital de mensagens (6 valores)
 ------------------------
 
 As mensagens de pedido e resposta devem passar a levar uma assinatura de 
