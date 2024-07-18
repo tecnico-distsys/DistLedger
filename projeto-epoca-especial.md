@@ -1,11 +1,11 @@
 Projeto de Época Especial
 ================ 
 
-Este documento descreve o projeto de época especial da cadeira de Sistemas Distribuídos 2022/2023.
+Este documento descreve o projeto de época especial da cadeira de Sistemas Distribuídos 2023/2024.
 
 O projeto é individual e consiste em 3 requisitos, que são descritos nas secções seguintes.
 
-A submissão é feita através do fenix até às 23:59 do dia 27/07/2023.
+A submissão é feita por email para para joao.barreto@tecnico.ulisboa.pt até às 15:30 do dia 24/07/2024.
 
 Na submissão, além do código do projeto, deve ser incluído um breve relatório (ficheiro de texto plano, com extensão .txt) que resuma o que foi concretizado em cada requisito. Concretamente, no relatório deve constar, para cada requisito (R1, R2, R3):
 
@@ -20,13 +20,13 @@ Haverá uma discussão final, a realizar em dia ser agendado posteriormente.
 0 Ponto de partida
 ------------
 
-O projeto consistirá numa extensão à solução da primeira parte do projeto da época normal de SD, cujo enunciado pode ser obtido [aqui](https://github.com/tecnico-distsys/DistLedger/blob/master/distledger.md).
+O projeto consistirá numa extensão à solução da primeira parte do projeto da época normal de SD 2022/23, cujo enunciado pode ser obtido [aqui](https://github.com/tecnico-distsys/DistLedger/blob/master/distledger.md).
 O resto do enunciado de época especial pressupõe que o estudante leu o enunciado mencionado acima.
 
-Para obter a solução base, o estudante deve enviar email aos docentes de SD e estes enviarão o código de uma solução.
+Para obter a solução base, o estudante deve enviar email aos docentes de SD e estes enviarão o código respetivo.
 
 
-1 Requisito R1: Operação shareWithOthers (7 valores)
+1 Requisito R1: Operação shareWithOthers (6 valores)
 ------------------------
 
 Projeto deve ser estendido com uma operação adicional, `shareWithOthers`.
@@ -45,15 +45,17 @@ Para implementar este requisito, o proto original do projeto precisa ser estendi
 Adicionalmente, a operação deve ser invocável através da consola do cliente *utilizador*.
 
 
-2 Requisito R2: Replicação com coerência fraca (7 valores)
+2 Requisito R2: Replicação com coerência fraca (8 valores)
 ------------------------
 
 
 O serviço deve passar a ser fornecido por dois servidores, *A* e *B*, 
 cada um mantendo uma réplica do estado. Cada servidor deve conhecer previamente o endereço do outro servidor (ou seja, não é preciso implementar qualquer serviço de nomes para a descoberta dinâmica de endereços).
 
-O protocolo de replicação não precisa assegurar qualquer garantia de coerência. 
-Ou seja:
+O algoritmo de replicação é inspirado no algoritmo da *Gossip Architecture* (ensinado nas aulas).
+No entanto, a solução pretendida não precisa assegurar as garantias de coerência do algoritmo original.
+
+Mais concretamente:
 
 - Um cliente submete uma operação a um dos servidores (escolhido aquando da invocação no cliente).
 
@@ -61,8 +63,10 @@ Ou seja:
 
 - Caso a operação seja de escrita, o servidor adiciona uma entrada a descrever a operação ao seu *update log* (ou seja, à sua *ledger* local), executa localmente a operação e responde ao cliente.
 
-- As operações nos logs de cada réplica são propagadas apenas quando solicitada pelo cliente administrador (através da operação 
+- As operações nos logs de cada réplica são propagadas apenas quando solicitado pelo cliente administrador (através da operação 
 *gossip*, descrita no enunciado de época normal).
+
+Adicionalmente
 
 
 3 Requisito R3: Assinatura digital de mensagens (6 valores)
